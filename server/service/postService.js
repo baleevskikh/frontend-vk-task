@@ -19,9 +19,8 @@ class PostService {
         return posts
     }
 
-    async getTape(username) {
-        const author = await User.findOne({username})
-        const posts = await Post.find({author}).populate('author', ['username', 'name']).sort([['createdAt', -1]])
+    async getTape(userId) {
+        const posts = await Post.find()
         return posts
     }
 

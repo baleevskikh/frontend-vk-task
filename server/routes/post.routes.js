@@ -9,6 +9,7 @@ router.post('/createPost',
     postController.createPost
 )
 router.post('/getUserPosts', postController.getUserPosts)
+router.get('/getTape', postController.getTape)
 router.post('/toggleLike', postController.toggleLike)
 
 module.exports = router
