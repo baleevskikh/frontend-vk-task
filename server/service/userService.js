@@ -81,7 +81,7 @@ class UserService {
             {
                 $or: [{requester: id}, {recipient: id}]
             }, ['requester', 'recipient', 'status']
-        ).populate('requester', ['name', 'username']).populate('recipient', ['name', 'username'])
+        ).populate('requester', ['name', 'username', 'avatar']).populate('recipient', ['name', 'username', 'avatar'])
 
         for (const friend of friendsData) {
             const user = (await friend).requester.id === id ? (await friend).recipient : (await friend).requester
@@ -104,7 +104,7 @@ class UserService {
 
     async searchUsers(userId, query) {
         let users = []
-        const usersData = await User.find({$text: {$search: query}}, ['name', 'username'])
+        const usersData = await User.find({$text: {$search: query}}, ['name', 'username', 'avatar'])
         const owner = await User.findOne({_id: userId})
         for (const user of usersData) {
             const userDto = new UserDto(user)

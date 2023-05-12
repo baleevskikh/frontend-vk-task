@@ -8,12 +8,16 @@ import {Placeholder} from "../Placeholder";
 
 
 export const InfinityTape: FC = () => {
+
     const [isLoading, setIsLoading] = useState<boolean>(true)
 
     const [posts, setPosts] = useState<IPost[]>([])
 
     useEffect(() => {
-
+        PostService.getTape().then(response => {
+            setPosts(response.data)
+        }).catch(error => {
+        }).finally(() => setIsLoading(false))
     }, [])
 
     if (isLoading) return <Preloader/>

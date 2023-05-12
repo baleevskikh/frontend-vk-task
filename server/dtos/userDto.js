@@ -46,7 +46,7 @@ class UserSerialize {
         this.bio = model.bio
         this.birthday = model.birthday
         this.city = model.city
-        this.avatar = model.avatar.includes(process.env.SERVER_URL) ? model.avatar : `${process.env.SERVER_URL}/api/images/${model.avatar}`
+        this.avatar = model.avatar ? model.avatar.includes(process.env.SERVER_URL) ? model.avatar : `${process.env.SERVER_URL}/api/images/${model.avatar}` : model.avatar
     }
 }
 

@@ -52,6 +52,6 @@
     margin-right: 4px;
 }
 
-.LikeButton:hover {
+.LikeButton:hover, .LikeButton.LikeButton--active {
     color: #E63A7F;
 }

@@ -8,7 +8,7 @@ export interface IPost {
     _id: string
     content: string
     image: string
-    likes: []
+    likes: string[]
     author: IUser
     createdAt: Date
 }

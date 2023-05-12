@@ -19,23 +19,26 @@ class PostService {
         return posts
     }
 
-    async getTape(userId) {
-        const posts = await Post.find()
+    async getTape() {
+        const posts = await Post.find().populate('author', ['username', 'name', 'avatar']).sort([['createdAt', -1]])
+        return posts
+    }
+
+    async getUserTape(userId) {
+        if (userId) console.log('test')
+        const posts = await Post.find().populate('author', ['username', 'name', 'avatar']).sort([['createdAt', -1]])
         return posts
     }
 
     async toggleLike(likerId, postId) {
-        const post = await Post.findOne({_id: postId});
-        console.log(post)
-        // const isLiked = post.likes.includes(likerId);
-        //
-        // if (isLiked) {
-        //     post.likes.delete(likerId);
-        // } else {
-        //     post.likes.set(likerId, true);
-        // }
-        //
-        // const updatedPost = await Post.findByIdAndUpdate(postId, {likes: post.likes}, {new: true})
+        const post = await Post.findOne({_id: postId})
+        if (!post.likes.includes(likerId)) {
+            post.likes.push(likerId)
+            post.save()
+        } else {
+            post.likes.splice(likerId, 1)
+            post.save()
+        }
         return post
     }
 }

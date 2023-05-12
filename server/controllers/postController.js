@@ -23,7 +23,16 @@ class PostController {
 
     async getTape(req, res, next) {
         try {
-            const userId = req.user.id
+            const postData = await postService.getTape()
+            return res.json(postData)
+        } catch (e) {
+            next(e)
+        }
+    }
+
+    async getUserTape(req, res, next) {
+        try {
+            const userId = req?.user?.id
             const postData = await postService.getTape(userId)
             return res.json(postData)
         } catch (e) {
@@ -33,8 +42,8 @@ class PostController {
 
     async toggleLike(req, res, next) {
         try {
-            const {id} = req.body
-            const postData = await postService.toggleLike(req.user.id, id)
+            const {postId} = req.body
+            const postData = await postService.toggleLike(req.user.id, postId)
             return res.json(postData)
         } catch (e) {
             next(e)

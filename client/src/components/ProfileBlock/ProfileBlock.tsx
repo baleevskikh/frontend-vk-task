@@ -24,11 +24,12 @@ export const ProfileBlock: FC<ProfileBlockProps> = ({username, owner}) => {
     const [user, setUser] = useState<IUserFull>()
 
     useEffect(() => {
+        setUser(undefined)
         UserService.getUserByUsername(username).then(response => {
             setUser(response.data)
         }).catch(error => {
         })
-    }, [])
+    }, [username])
 
     if (!username) return <Navigate to={'/'}/>
 

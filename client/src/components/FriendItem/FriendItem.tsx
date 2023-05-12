@@ -21,7 +21,7 @@ export const FriendItem: FC<FriendItemProps> = ({user}) => {
     return (
         <div className={styles.FriendItem}>
             <div onClick={handleClick} className={styles.FriendItem__info_wrapper}>
-                <Avatar size={48} username={user.name}/>
+                <Avatar src={user.avatar} size={48} username={user.name}/>
                 <p className={styles.FriendItem__info}>{user.name} <br/><span>{user.username}</span></p>
             </div>
             <ToggleFriendButton userId={user.id} friendStatus={user.friendStatus} size={'sm'}/>
