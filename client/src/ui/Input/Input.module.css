@@ -1,0 +1,133 @@
+.Input {
+  position: relative;
+  border-radius: 10px;
+  box-sizing: border-box;
+  height: var(--height);
+  font-size: var(--font-size);
+  display: flex;
+}
+
+.Input:hover > .Input__label {
+  color: var(--accent-color);
+}
+
+.Input:hover > .Input__border {
+  border: 1px solid var(--accent-color);
+}
+
+.Input__input {
+  margin: 0;
+  box-sizing: border-box;
+  position: relative;
+  border-radius: inherit;
+  width: 100%;
+  height: 100%;
+  outline: 0;
+  border: none;
+  font-size: inherit;
+  padding: 0 var(--padding);
+  background-color: transparent;
+  z-index: 3;
+}
+
+.Input__input::placeholder {
+  color: var(--muted-color);
+}
+
+.Input__input:placeholder-shown {
+  text-overflow: ellipsis;
+}
+
+.Input__before, .Input__after {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  padding: 0 var(--padding);
+}
+
+.Input__border {
+  position: absolute;
+  border-radius: inherit;
+  border: 1px solid var(--border-color-el);
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  outline: 0;
+  transition: all 210ms ease-in-out;
+  z-index: 1;
+  background-color: transparent;
+}
+
+.Input__label {
+  position: absolute;
+  font-size: inherit;
+  color: var(--muted-color);
+  top: 0;
+  left: calc(var(--padding) - 2px);
+  margin-top: calc((var(--height) - var(--font-size)) / 2);
+  user-select: none;
+  white-space: nowrap;
+  background-color: var(--white-color);
+  padding: 0 2px;
+  transition: all 210ms ease-in-out;
+  text-overflow: ellipsis;
+  z-index: 2;
+}
+
+.Input__input:focus ~ .Input__label, .Input__input:not(:placeholder-shown).Input__input:not(:focus) ~ .Input__label {
+  transform: translateY(calc(var(--height) / -2 + (var(--font-size) * .75) / 4));
+  font-size: calc(var(--font-size) * .75);
+}
+
+.Input__input:focus ~ .Input__label {
+  color: var(--accent-color);
+  font-weight: 500;
+}
+
+.Input--lg {
+  --height: 50px;
+  --font-size: 16px;
+  --padding: 15px;
+}
+
+.Input--md {
+  --height: 38px;
+  --font-size: 16px;
+  --padding: 14px;
+}
+
+.Input--sm {
+  --height: 36px;
+  --font-size: 14px;
+  --padding: 12px;
+}
+
+.Input:focus-within .Input__border {
+  border: 2px solid var(--accent-color);
+}
+
+.Input--stretched {
+  width: 100%;
+}
+
+.Input--error .Input__label {
+  color: var(--error-color);
+}
+.Input--error:hover > .Input__label {
+  color: var(--error-color);
+}
+.Input--error:hover > .Input__border {
+  border: 1px solid var(--error-color);
+}
+.Input--error .Input__border {
+  border: 1px solid var(--error-color);
+}
+.Input--error:focus-within .Input__border {
+  border: 2px solid var(--error-color);
+}
+.Input--error .Input__input:focus ~ .Input__label {
+  color: var(--error-color);
+  font-weight: 500;
+}

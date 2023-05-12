@@ -1,0 +1,21 @@
+.Avatar {
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+.Avatar--image {
+  object-fit: cover;
+  background-position: top center;
+}
+
+.Avatar--text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--avatar-bg);
+}
+.Avatar--text span {
+  display: block;
+  font-weight: 700;
+  color: var(--avatar-color);
+}

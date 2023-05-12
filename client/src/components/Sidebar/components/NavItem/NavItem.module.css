@@ -1,0 +1,28 @@
+.NavItem {
+    display: flex;
+    font-size: 20px;
+    padding: 12px 28px 12px 12px;
+    margin-left: -12px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 9999px;
+    width: -moz-fit-content;
+    width: fit-content;
+    cursor: pointer;
+    color: var(--black-color);
+    transition: background-color .2s;
+}
+.NavItem:hover {
+    background-color: var(--hover-color);
+    text-decoration: none;
+}
+.NavItem--active {
+    font-weight: 700;
+}
+.NavItem svg {
+    margin-right: 20px;
+    color: var(--muted-color);
+}
+.NavItem--active svg {
+    color: var(--black-color);
+}

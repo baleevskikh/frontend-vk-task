@@ -1,0 +1,42 @@
+.PeoplesList {
+    padding: var(--default-padding);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.PeoplesList__input_wrapper {
+    background-color: #F0F3F4;
+    border-radius: 9999px;
+    border: 1px solid #F0F3F4;
+    transition: all .2s;
+    display: flex;
+    height: 42px;
+    box-sizing: border-box;
+    align-items: center;
+}
+.PeoplesList__input_wrapper:focus-within {
+    background-color: transparent;
+    border: 1px solid var(--accent-color);
+}
+.PeoplesList__input_icon {
+    margin-left: 16px;
+    margin-right: 12px;
+    color: var(--muted-color);
+    width: 22px;
+}
+.PeoplesList__input_wrapper:focus-within .PeoplesList__input_icon {
+    color: var(--accent-color);
+}
+.PeoplesList__input {
+    border-radius: 9999px;
+    background-color: inherit;
+    width: 100%;
+    height: 100%;
+    border: 0;
+    font-size: 15px;
+}
+.PeoplesList__input::placeholder {
+    color: var(--muted-color);
+}
+.PeoplesList__input:focus {
+    outline: 0;
+}

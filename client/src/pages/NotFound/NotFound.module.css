@@ -1,0 +1,24 @@
+.NotFound {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.NotFound__content {
+    width: 360px;
+    padding: 20px;
+}
+
+.NotFound__logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 10px;
+}
+.NotFound__title {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 24px;
+    text-align: center;
+}

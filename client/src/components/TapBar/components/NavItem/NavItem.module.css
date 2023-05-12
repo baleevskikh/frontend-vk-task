@@ -1,0 +1,16 @@
+.NavItem {
+    width: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--muted-color);
+    padding: 12px 0;
+    cursor: pointer;
+    flex-wrap: wrap;
+}
+.NavItem span {
+    width: 100%;
+}
+.NavItem--active {
+    color: var(--black-color);
+}

@@ -1,0 +1,42 @@
+.UserItem {
+    margin-top: 12px;
+    margin-bottom: 12px;
+    width: 100%;
+    display: flex;
+    padding: 12px;
+    box-sizing: border-box;
+    border-radius: 9999px;
+    cursor: pointer;
+    align-items: center;
+}
+.UserItem__wrapper {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    margin-left: -12px;
+}
+
+.UserItem:hover {
+    background-color: var(--hover-color);
+}
+
+.UserItem__avatar {
+    margin-right: 12px;
+}
+
+.UserItem__info {
+    font-size: 15px;
+    line-height: 140%;
+    margin-right: auto;
+}
+.UserItem__name {
+    color: var(--black-color);
+    font-weight: 700;
+}
+.UserItem__username {
+    color: var(--muted-color);
+}
+
+.UserItem__action_icon {
+    color: var(--muted-color);
+}

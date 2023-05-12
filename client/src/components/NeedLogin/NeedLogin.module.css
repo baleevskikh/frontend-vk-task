@@ -1,0 +1,47 @@
+.NeedLogin__wrapper {
+    background-color: var(--accent-color);
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    padding: 12px;
+    box-sizing: border-box;
+}
+.NeedLogin {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.NeedLogin__text {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--white-color);
+}
+.NeedLogin__text span {
+    font-size: 16px;
+    font-weight: 400;
+}
+.NeedLogin__links {
+    display: flex;
+}
+@media only screen and (max-width: 740px) {
+    .NeedLogin__text {
+        display: none;
+    }
+    .NeedLogin__links {
+        width: 100%;
+    }
+    .stretched {
+        width: 100%;
+    }
+}
+
+.Button--login {
+    border: 1px solid #87BDF1;
+    background-color: transparent;
+    color: var(--white-color);
+    margin-right: 12px;
+}
+.Button--login:hover {
+    background-color: rgba(255, 255, 255, .1);
+}

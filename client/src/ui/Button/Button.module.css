@@ -1,0 +1,86 @@
+.Button {
+  border: 0;
+  border-radius: 9999px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color .2s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  box-sizing: border-box;
+  height: var(--height);
+  font-size: var(--font-size);
+  position: relative;
+}
+
+.Button:hover {
+  text-decoration: none;
+}
+
+.Button--default {
+  background-color: var(--black-color);
+  color: var(--white-color);
+}
+.Button--default:hover {
+  background-color: var(--black-hover);
+}
+.Button--primary {
+  background-color: var(--accent-color);
+  color: var(--white-color);
+}
+.Button--primary:hover {
+  background-color: var(--accent-hover);
+}
+.Button--secondary {
+  background-color: var(--secondary-color);
+  color: var(--black-color);
+}
+.Button--secondary:hover {
+  background-color: var(--secondary-hover);
+}
+.Button--bordered {
+  border: 2px solid var(--border-color);
+  background-color: transparent;
+  color: var(--black-color);
+}
+.Button--bordered:hover {
+  background-color: rgba(0, 0, 0, .03);
+}
+
+.Button--sm {
+  --height: 36px;
+  --font-size: 14px;
+  padding: 0 20px;
+}
+.Button--md {
+  --height: 38px;
+  --font-size: 16px;
+  padding: 0 24px;
+}
+.Button--lg {
+  --height: 50px;
+  --font-size: 16px;
+  padding: 0 26px;
+}
+
+.Button--stretched {
+  width: 100%;
+}
+
+.Button--disabled {
+  opacity: .7;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.Button--loading span:first-child {
+  opacity: 0;
+}
+.Button__spinner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}

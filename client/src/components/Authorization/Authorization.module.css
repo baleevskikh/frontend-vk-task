@@ -1,0 +1,26 @@
+.Authorization__title {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 40px;
+    text-align: center;
+}
+.Authorization__error {
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 40px;
+    text-align: center;
+    color: var(--error-color);
+}
+.Authorization__input {
+    margin-bottom: 12px;
+}
+.Authorization__button {
+    margin-top: 24px;
+}
+.Authorization__action {
+    text-align: center;
+    margin-top: 32px;
+    font-size: 16px;
+    color: var(--muted-color);
+}
+

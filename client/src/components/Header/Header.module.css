@@ -1,0 +1,30 @@
+.Header {
+    padding: 20px 16px;
+    border-bottom: 1px solid var(--border-color);
+    position: sticky;
+    top: 0;
+    background-color: rgba(255, 255, 255, 0.85);
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+    display: flex;
+    align-items: center;
+    height: 61px;
+    box-sizing: border-box;
+    z-index: 15;
+}
+.Header h1 {
+    font-size: 20px;
+    font-weight: 700;
+}
+.Header__back_button {
+    margin-right: 20px;
+    height: 36px;
+    width: 36px;
+    border: 0;
+    background-color: transparent;
+    cursor: pointer;
+    border-radius: 9999px;
+}
+.Header__back_button:hover {
+    background-color: rgba(0, 0, 0, .1);
+}

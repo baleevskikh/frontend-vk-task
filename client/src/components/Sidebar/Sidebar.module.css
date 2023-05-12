@@ -1,0 +1,26 @@
+.Sidebar {
+    min-width: 256px;
+    position: relative;
+}
+.Sidebar__container {
+    top: 0;
+    height: 100vh;
+    position: sticky;
+}
+.StickyContainer {
+    position: sticky;
+    width: auto;
+    overflow-y: auto;
+    top: 20px;
+    padding: 0 12px;
+}
+.Sidebar__logo {
+    color: var(--accent-color);
+    margin-bottom: 12px;
+}
+
+@media only screen and (max-width: 800px) {
+    .Sidebar {
+        display: none;
+    }
+}

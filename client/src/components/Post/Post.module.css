@@ -1,0 +1,57 @@
+.Post {
+    padding: 8px 16px;
+    display: flex;
+    transition: background-color .2s;
+    cursor: pointer;
+    border-bottom: 1px solid var(--border-color);
+}
+.Post:hover {
+    background-color: var(--post-hover);
+}
+.Post--left {
+    margin-left: 12px;
+    width: 100%;
+}
+.Post__header_info {
+    font-size: 15px;
+    margin-bottom: 2px;
+}
+.Post__header_info--user {
+    color: #000;
+    font-weight: 700;
+}
+.Post__header_info--other {
+    margin-left: 4px;
+    color: var(--muted-color);
+}
+.Post__content {
+    font-size: 15px;
+    line-height: 140%;
+    color: #000;
+}
+.Post__image {
+    margin-top: 12px;
+    width: 100%;
+    border: 1px solid #D1D9DD;
+    border-radius: 15px;
+}
+.Post__bottom_action {
+    margin: 8px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.LikeButton {
+    font-size: 13px;
+    color: var(--muted-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.LikeButton svg {
+    margin-right: 4px;
+}
+
+.LikeButton:hover {
+    color: #E63A7F;
+}

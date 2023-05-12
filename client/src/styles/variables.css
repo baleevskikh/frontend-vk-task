@@ -1,0 +1,22 @@
+:root {
+    --border-color: rgba(0, 0, 0, .07);
+    --border-color-el: #D1D9DD;
+    --avatar-bg: #CED6DC;
+    --avatar-color: #687784;
+    --post-hover: #F7F7F7;
+    --accent-color: #4B90E5;
+    --muted-color: #566470;
+    --black-color: #000;
+    --secondary-color: #F0F3F4;
+    --hover-color: #E7E7E8;
+    --white-color: #fff;
+    --error-color: #CF4C47;
+    --height: 38px;
+    --font-size: 16px;
+
+    --black-hover: #282C30;
+    --accent-hover: #3F8BD2;
+    --secondary-hover: #D8DBDC;
+
+    --default-padding: 16px 12px;
+}

@@ -1,0 +1,25 @@
+.LayoutAuthorization {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.LayoutAuthorization__content {
+  width: 360px;
+}
+
+@media only screen and (max-width: 400px) {
+  .LayoutAuthorization__content {
+    width: 100%;
+    padding: 20px;
+  }
+}
+
+.LayoutAuthorization__logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 10px;
+}
