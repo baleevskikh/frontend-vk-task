@@ -45,16 +45,6 @@ class PostController {
         }
     }
 
-    async getUserTape(req, res, next) {
-        try {
-            const userId = req?.user?.id
-            const postData = await postService.getTape(userId)
-            return res.json(postData)
-        } catch (e) {
-            next(e)
-        }
-    }
-
     async toggleLike(req, res, next) {
         try {
             const {postId} = req.body

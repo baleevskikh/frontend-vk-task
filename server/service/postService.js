@@ -1,8 +1,6 @@
 const Post = require("../models/Post");
 const User = require("../models/User");
 const Friend = require("../models/Friend");
-const ApiError = require("../exceptions/apiError");
-const tokenService = require("./tokenService");
 
 class PostService {
     async createPost(authorId, content, postImage) {
@@ -30,7 +28,10 @@ class PostService {
             return posts
         }
         const friends = await Friend.find({$or: [{requester: userData.id}, {recipient: userData.id, status: 2}]})
+
         const friendIds = new Set()
+        friendIds.add(userData.id)
+
         for (let friend of friends) {
             friendIds.add(friend.requester)
             friendIds.add(friend.recipient)
@@ -38,12 +39,6 @@ class PostService {
 
         const friendPosts = await Post.find({author: {$in: [...friendIds]}}).populate('author', ['username', 'name', 'avatar']).sort([['createdAt', -1]])
         return friendPosts
-    }
-
-    async getUserTape(userId) {
-        if (userId) console.log('test')
-        const posts = await Post.find().populate('author', ['username', 'name', 'avatar']).sort([['createdAt', -1]])
-        return posts
     }
 
     async toggleLike(likerId, postId) {

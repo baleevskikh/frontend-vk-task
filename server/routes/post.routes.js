@@ -10,7 +10,6 @@ router.post('/createPost',
 )
 router.post('/getUserPosts', postController.getUserPosts)
 router.get('/getTape', postController.getTape)
-router.get('/getUserTape', authMiddleware, postController.getUserTape)
 router.post('/toggleLike', authMiddleware, postController.toggleLike)
 
 module.exports = router
