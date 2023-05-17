@@ -1,4 +1,6 @@
 const postService = require("../service/postService");
+const ApiError = require("../exceptions/apiError");
+const tokenService = require("../service/tokenService");
 
 class PostController {
     async createPost(req, res, next) {
@@ -23,7 +25,20 @@ class PostController {
 
     async getTape(req, res, next) {
         try {
-            const postData = await postService.getTape()
+            const authorizationHeader = req.headers.authorization
+            let userData = null
+            if (authorizationHeader) {
+                const accessToken = authorizationHeader.split(' ')[1]
+                if (accessToken) {
+                    userData = tokenService.validateAccessToken(accessToken)
+                    if (!userData) {
+                        userData = null
+                    }
+                }
+            }
+
+
+            const postData = await postService.getTape(userData)
             return res.json(postData)
         } catch (e) {
             next(e)
